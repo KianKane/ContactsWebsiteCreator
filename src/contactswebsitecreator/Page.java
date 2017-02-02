@@ -7,7 +7,7 @@ import java.io.IOException;
  * A base HTML page
  * 
  * @author Kian Kane
- * @version 30/01/2017
+ * @version 02/02/2017
  */
 public abstract class Page
 {
