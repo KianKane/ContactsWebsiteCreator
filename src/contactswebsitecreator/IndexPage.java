@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * A HTML index page
  * 
  * @author Kian Kane
- * @version 30/01/2017
+ * @version 02/02/2017
  */
 public class IndexPage extends Page
 {
@@ -23,24 +23,11 @@ public class IndexPage extends Page
 
     @Override public File createFile()
     {
-        try
+        String content = "<h1>All Contacts</h1>\n";
+        for (Contact contact : contacts)
         {
-            File file = new File(path + "/index.html");
-            PrintWriter writer = new PrintWriter(file);
-            writer.println(getOpenSkeleton("All Contacts"));
-            writer.println("<h1>All Contacts</h1>");
-            for (Contact contact : contacts)
-            {
-                writer.println("<a href='" + + contact.id + ".html'>" + contact.id + " " + contact.forename + " " + contact.surname + "</a><br>");
-            }
-            writer.println(getCloseSkeleton());
-            writer.close();
-            return file;
+            content += "<a href='" + + contact.id + ".html'>" + contact.id + " " + contact.forename + " " + contact.surname + "</a><br>";
         }
-        catch(IOException e)
-        {
-            System.err.println(e.getMessage());
-            return null;
-        }
+        return HTMLFileWriter.writeFile(path + "/index.html", "All Contacts", content);
     }
 }
