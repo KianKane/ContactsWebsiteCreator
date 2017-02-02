@@ -21,7 +21,7 @@ public class IndexPage extends Page
         this.contacts = contacts;
     }
 
-    @Override public File createFile()
+    @Override public File createFile() throws IOException
     {
         String content = "<h1>All Contacts</h1>\n";
         for (Contact contact : contacts)

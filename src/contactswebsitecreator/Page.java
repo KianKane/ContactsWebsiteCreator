@@ -1,6 +1,7 @@
 package contactswebsitecreator;
 
 import java.io.File;
+import java.io.IOException;
 
 /**
  * A base HTML page
@@ -21,7 +22,7 @@ public abstract class Page
     
     /** Create the HTML file for this page
      * @return Returns true if the file was successfully created */
-    public abstract File createFile();
+    public abstract File createFile() throws IOException;
     
     /** Returns the opening part of a HTML skeleton up until the body
      * @param title The page title

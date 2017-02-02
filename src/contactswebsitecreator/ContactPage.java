@@ -20,7 +20,7 @@ public class ContactPage extends Page
         this.contact = contact;
     }
 
-    @Override public File createFile()
+    @Override public File createFile() throws IOException
     {
             String content = "<h1>" + contact.forename + " " + contact.surname + "</h1>\n";
             content += "<h1>" + contact.forename + " " + contact.surname + "</h1>";

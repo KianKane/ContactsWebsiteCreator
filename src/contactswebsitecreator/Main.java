@@ -3,6 +3,8 @@ package contactswebsitecreator;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Program starting point
@@ -39,11 +41,19 @@ public class Main
         
         // Create files
         IndexPage indexPage = new IndexPage(path, dataSet.contacts);
-        indexPage.createFile();
+        try {
+            indexPage.createFile();
+        } catch (IOException e) {
+            System.out.println ("Unable to create index page: " + e.getMessage());
+        }
         for (Contact contact : dataSet.contacts)
         {
             ContactPage contactPage = new ContactPage(path, contact);
-            contactPage.createFile();
+            try {
+                contactPage.createFile();
+            } catch (IOException e) {
+                System.out.println ("Unable to create contact page (Contact ID: " + contact.id + "): " + e.getMessage());
+            }
         }
 
         // Open folder

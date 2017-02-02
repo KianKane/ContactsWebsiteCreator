@@ -12,28 +12,21 @@ import java.io.PrintWriter;
  */
 public class HTMLFileWriter
 {
-    public static File writeFile(String fullPath, String title, String content)
+    public static File writeFile(String fullPath, String title, String content) throws IOException
     {
         File file = new File(fullPath);
-        try (PrintWriter writer = new PrintWriter(file))
-        {
-            String output = "";
-            output += "<!DOCTYPE html>\n";
-            output += "<html>\n";
-            output += "<head>\n";
-            output += "<title>" + title + "</title>\n";
-            output += "</head>\n";
-            output += "<body>\n";
-            output += content;
-            output += "</body>\n";
-            output += "<html>\n";
-            writer.write(output);
-        }
-        catch(IOException e)
-        {
-            System.err.println(e.getMessage());
-            return null;
-        }
+        PrintWriter writer = new PrintWriter(file);
+        String output = "";
+        output += "<!DOCTYPE html>\n";
+        output += "<html>\n";
+        output += "<head>\n";
+        output += "<title>" + title + "</title>\n";
+        output += "</head>\n";
+        output += "<body>\n";
+        output += content;
+        output += "</body>\n";
+        output += "<html>\n";
+        writer.write(output);
         return file;
     }
 }
