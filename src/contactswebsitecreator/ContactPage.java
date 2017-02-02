@@ -22,25 +22,13 @@ public class ContactPage extends Page
 
     @Override public File createFile()
     {
-        try
-        {
-            File file = new File(path + "/" + contact.id + ".html");
-            PrintWriter writer = new PrintWriter(file);
-            writer.println(getOpenSkeleton(contact.forename + " " + contact.surname));
-            writer.println("<h1>" + contact.forename + " " + contact.surname + "</h1>");
-            writer.println("<p>" + "Contact ID: " + contact.id + "</p>");
-            writer.println("<p>" + "Full Name: " + contact.forename + " " + contact.surname + "</p>");
-            writer.println("<p>" + "Email Address: " + contact.email + "</p>");
-            writer.println("<p>" + "Phone Number: " + contact.phone + "</p>");
-            writer.println("<a href='index.html'><-- Go Back</a>");
-            writer.println(getCloseSkeleton());
-            writer.close();
-            return file;
-        }
-        catch(IOException e)
-        {
-            System.err.println(e.getMessage());
-            return null;
-        }
+            String content = "<h1>" + contact.forename + " " + contact.surname + "</h1>\n";
+            content += "<h1>" + contact.forename + " " + contact.surname + "</h1>";
+            content += "<p>" + "Contact ID: " + contact.id + "</p>";
+            content += "<p>" + "Full Name: " + contact.forename + " " + contact.surname + "</p>";
+            content += "<p>" + "Email Address: " + contact.email + "</p>";
+            content += "<p>" + "Phone Number: " + contact.phone + "</p>";
+            content += "<a href='index.html'><-- Go Back</a>";
+            return HTMLFileWriter.writeFile(path + "/" + contact.id + ".html", contact.forename + " " + contact.surname, content);
     }
 }
