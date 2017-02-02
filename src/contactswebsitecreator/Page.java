@@ -21,7 +21,8 @@ public abstract class Page
     }
     
     /** Create the HTML file for this page
-     * @return Returns true if the file was successfully created */
+     * @return Returns true if the file was successfully created
+     * @throws java.io.IOException when the file cannot be properly created */
     public abstract File createFile() throws IOException;
     
     /** Returns the opening part of a HTML skeleton up until the body

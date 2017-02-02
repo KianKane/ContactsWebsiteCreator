@@ -12,6 +12,12 @@ import java.io.PrintWriter;
  */
 public class HTMLFileWriter
 {
+    /** Writes a HTML file to disk
+     * @param fullPath Full path including filename and extention
+     * @param title HTML title for the page
+     * @param content HTML content (inside the <body> tags)
+     * @return Returns the created file
+     * @throws java.io.IOException when the PrintWriter fails to correctly save the file */
     public static File writeFile(String fullPath, String title, String content) throws IOException
     {
         File file = new File(fullPath);
