@@ -1,9 +1,5 @@
 package contactswebsitecreator;
 
-import java.awt.Desktop;
-import java.io.File;
-import java.io.IOException;
-
 /**
  * Program starting point
  * 
@@ -26,12 +22,8 @@ public class Main
         dataSet.loadFromDatabase(host, user, pass);
         
         // Ensure directory exists and clear files currently present
-        File dir = new File(path);
-        dir.mkdirs();
-        for (File file: dir.listFiles())
-        {
-            file.delete();
-        }
+        FolderUtilities.createFolders(path);
+        FolderUtilities.clearFolder(path);
         
         // Create files
         PageFactory creator = new PageFactory(path);
@@ -42,13 +34,6 @@ public class Main
         }
 
         // Open folder
-        try
-        {
-            Desktop.getDesktop().open(new File(path));
-        }
-        catch (IOException e)
-        {
-            System.err.println("Unable to open folder: " + e.getMessage());
-        }
+        FolderUtilities.openFolder(path);
     }
 }
