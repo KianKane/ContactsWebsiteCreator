@@ -2,13 +2,12 @@ package contactswebsitecreator;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 /**
  * A HTML contact page
  * 
  * @author Kian Kane
- * @version 02/02/2017
+ * @version 06/02/2017
  */
 public class ContactPage extends Page
 {
