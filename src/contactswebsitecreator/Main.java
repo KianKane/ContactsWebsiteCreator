@@ -40,20 +40,11 @@ public class Main
         }
         
         // Create files
-        IndexPage indexPage = new IndexPage(path, dataSet.contacts);
-        try {
-            indexPage.createFile();
-        } catch (IOException e) {
-            System.out.println ("Unable to create index page: " + e.getMessage());
-        }
+        PageCreator creator = new PageCreator(path);
+        creator.createIndexPage(dataSet.contacts);
         for (Contact contact : dataSet.contacts)
         {
-            ContactPage contactPage = new ContactPage(path, contact);
-            try {
-                contactPage.createFile();
-            } catch (IOException e) {
-                System.out.println ("Unable to create contact page (Contact ID: " + contact.id + "): " + e.getMessage());
-            }
+            creator.createContactPage(contact);
         }
 
         // Open folder
