@@ -10,11 +10,11 @@ import java.util.ArrayList;
  * @author Kian Kane
  * @version 06/02/2017
  */
-public class PageCreator
+public class PageFactory
 {
     private final String path;
     
-    public PageCreator(String path)
+    public PageFactory(String path)
     {
         this.path = path;
     }

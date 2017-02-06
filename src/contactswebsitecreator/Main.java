@@ -34,7 +34,7 @@ public class Main
         }
         
         // Create files
-        PageCreator creator = new PageCreator(path);
+        PageFactory creator = new PageFactory(path);
         creator.createIndexPage(dataSet.contacts);
         for (Contact contact : dataSet.contacts)
         {
