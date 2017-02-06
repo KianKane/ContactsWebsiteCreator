@@ -10,7 +10,7 @@ import java.util.logging.Logger;
  * Program starting point
  * 
  * @author Kian Kane
- * @version 02/02/2017
+ * @version 06/02/2017
  */
 public class Main
 {
@@ -25,11 +25,7 @@ public class Main
         
         // Load from database
         ContactDataSet dataSet = new ContactDataSet();
-        if (!dataSet.loadFromDatabase(host, user, pass))
-        {
-            System.err.println("Failed to load contacts from database");
-            return;
-        }
+        dataSet.loadFromDatabase(host, user, pass);
         
         // Ensure directory exists and clear files currently present
         File dir = new File(path);
@@ -54,7 +50,7 @@ public class Main
         }
         catch (IOException e)
         {
-            System.err.println(e.getMessage());
+            System.err.println("Unable to open folder: " + e.getMessage());
         }
     }
 }

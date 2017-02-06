@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * Holds a list of contacts loaded from the database
  * 
  * @author Kian Kane
- * @version 26/01/2017
+ * @version 06/02/2017
  */
 public class ContactDataSet
 {
@@ -22,9 +22,8 @@ public class ContactDataSet
     /** Fills the contacts list from the specified host
      * @param host The host database
      * @param user The username for the database
-     * @param pass The password for the database
-     * @return Returns true if the load was a success and false if it failed */
-    public boolean loadFromDatabase(String host, String user, String pass)
+     * @param pass The password for the database */
+    public void loadFromDatabase(String host, String user, String pass)
     {
         // Clear the contacts list
         if (contacts == null)
@@ -51,9 +50,7 @@ public class ContactDataSet
         }
         catch(SQLException e)
         {
-            System.err.println(e.getMessage());
-            return false;
+            System.err.println("Failed to load contacts from database: " + e.getMessage());
         }
-        return true;
     }
 }
