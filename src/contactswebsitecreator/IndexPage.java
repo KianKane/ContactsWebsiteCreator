@@ -10,13 +10,14 @@ import java.util.ArrayList;
  * @author Kian Kane
  * @version 06/02/2017
  */
-public class IndexPage extends Page
+public class IndexPage implements IPage
 {
+    private final String path;
     private final ArrayList<Contact> contacts;
     
     public IndexPage(String path, ArrayList<Contact> contacts)
     {
-        super(path);
+        this.path = path;
         this.contacts = contacts;
     }
 

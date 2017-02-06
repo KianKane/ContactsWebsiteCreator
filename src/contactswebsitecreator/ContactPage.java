@@ -9,13 +9,14 @@ import java.io.IOException;
  * @author Kian Kane
  * @version 06/02/2017
  */
-public class ContactPage extends Page
+public class ContactPage implements IPage
 {
+    private final String path;
     private final Contact contact;
     
     public ContactPage(String path, Contact contact)
     {
-        super(path);
+        this.path = path;
         this.contact = contact;
     }
 
