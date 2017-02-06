@@ -1,6 +1,5 @@
 package contactswebsitecreator;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -14,11 +13,15 @@ public class PageFactory
 {
     private final String path;
     
+    /** Constructor
+     * @param path The path to the contacts folder */
     public PageFactory(String path)
     {
         this.path = path;
     }
     
+    /** Creates an index page
+     * @param contacts The list of contacts for the index page to link to */
     public void createIndexPage(ArrayList<Contact> contacts)
     {
         String contactsHTML = "";
@@ -43,6 +46,8 @@ public class PageFactory
         }
     }
     
+    /** Creates a contact page
+     * @param contact The contact to describe in the page */
     public void createContactPage(Contact contact)
     {
         String content = 
