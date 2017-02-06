@@ -35,7 +35,7 @@ public class HTML
     
     public static String h1(String innerHTML)
     {
-        return "<h1>" + innerHTML + "/h1>";
+        return "<h1>" + innerHTML + "</h1>";
     }
     
     public static String p(String innerHTML)

@@ -21,13 +21,18 @@ public class ContactPage extends Page
 
     @Override public File createFile() throws IOException
     {
-            String content = "<h1>" + contact.forename + " " + contact.surname + "</h1>\n";
-            content += "<h1>" + contact.forename + " " + contact.surname + "</h1>";
-            content += "<p>" + "Contact ID: " + contact.id + "</p>";
-            content += "<p>" + "Full Name: " + contact.forename + " " + contact.surname + "</p>";
-            content += "<p>" + "Email Address: " + contact.email + "</p>";
-            content += "<p>" + "Phone Number: " + contact.phone + "</p>";
-            content += "<a href='index.html'><-- Go Back</a>";
-            return HTMLFileWriter.writeFile(path + "/" + contact.id + ".html", contact.forename + " " + contact.surname, content);
+            String content = 
+                    HTML.doctype() + 
+                    HTML.html(
+                            HTML.head(HTML.title(contact.forename + " " + contact.surname)) + 
+                            HTML.body(
+                                    HTML.h1(contact.forename + " " + contact.surname) + 
+                                    HTML.p("Contact ID: " + contact.id) +
+                                    HTML.p("Full Name: " + contact.forename + " " + contact.surname) +
+                                    HTML.p("Email Address: " + contact.email) +
+                                    HTML.p("Phone Number: " + contact.phone) +
+                                    HTML.a("index.html", "<-- Go Back")));
+
+            return FileWriter.writeFile(path + "/" + contact.id + ".html", content);
     }
 }

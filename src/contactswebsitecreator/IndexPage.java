@@ -22,11 +22,18 @@ public class IndexPage extends Page
 
     @Override public File createFile() throws IOException
     {
-        String content = "<h1>All Contacts</h1>\n";
+        String contactsHTML = "";
         for (Contact contact : contacts)
         {
-            content += "<a href='" + + contact.id + ".html'>" + contact.id + " " + contact.forename + " " + contact.surname + "</a><br>";
+            contactsHTML += HTML.a(contact.id + ".html", contact.id + " " + contact.forename + " " + contact.surname) + HTML.br();
         }
-        return HTMLFileWriter.writeFile(path + "/index.html", "All Contacts", content);
+        
+        String content = 
+                HTML.doctype() + 
+                HTML.html(
+                        HTML.head(HTML.title("All Contacts")) + 
+                        HTML.body(contactsHTML));
+        
+        return FileWriter.writeFile(path + "/index.html", content);
     }
 }
