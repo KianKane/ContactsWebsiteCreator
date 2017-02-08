@@ -4,7 +4,7 @@ package contactswebsitecreator;
  * Program starting point
  * 
  * @author Kian Kane
- * @version 06/02/2017
+ * @version 08/02/2017
  */
 public class Main
 {
@@ -27,10 +27,10 @@ public class Main
         
         // Create files
         PageFactory creator = new PageFactory(path);
-        creator.createIndexPage(dataSet.contacts);
+        creator.getIndexPage(dataSet.contacts).generatePage();
         for (Contact contact : dataSet.contacts)
         {
-            creator.createContactPage(contact);
+            creator.getContactPage(contact).generatePage();
         }
 
         // Open folder
