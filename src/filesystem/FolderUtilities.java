@@ -1,9 +1,9 @@
 package filesystem;
 
-import input.Prompter;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
+import javax.swing.JOptionPane;
 
 /**
  * Provides some useful methods for dealing with folders
@@ -19,10 +19,7 @@ public class FolderUtilities
     {
         File directory = new File(path);
         if (!directory.exists())
-        {
-            if (Prompter.YesNo(path + " directory not found, create directory?", "Create Directory"))
-                directory.mkdirs();
-        }
+            directory.mkdirs();
     }
     
     /** Deletes files stored within the specified folder
@@ -32,7 +29,8 @@ public class FolderUtilities
         File directory = new File(path);
         if (directory.list().length > 0)
         {
-            if (Prompter.YesNo(path + " directory contains files, delete files from directory?", "Clear Directory"))
+            int reply = JOptionPane.showConfirmDialog(null, path + " directory contains files, delete files from directory?", "Clear Directory", JOptionPane.YES_NO_OPTION);
+            if (reply == JOptionPane.YES_OPTION)
             {
                 for (File file: directory.listFiles())
                 {
