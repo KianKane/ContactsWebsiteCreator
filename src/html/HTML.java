@@ -12,7 +12,7 @@ public class HTML
      * @return a DOCTYPE declaration */
     public static String doctype()
     {
-        return "<!DOCTYPE html>";
+        return "<!DOCTYPE html>\n";
     }
     
     /** Creates and returns html tags with the specified innerHTML
@@ -20,7 +20,7 @@ public class HTML
      * @return html tags with the specified innerHTML */
     public static String html(String innerHTML)
     {
-        return "<html>" + innerHTML + "</html>";
+        return "<html>\n" + innerHTML + "</html>\n";
     }
     
     /** Creates and returns head tags with the specified innerHTML
@@ -28,7 +28,7 @@ public class HTML
      * @return head tags with the specified innerHTML */
     public static String head(String innerHTML)
     {
-        return "<head>" + innerHTML + "</head>";
+        return "<head>\n" + innerHTML + "</head>\n";
     }
     
     /** Creates and returns title tags with the specified innerHTML
@@ -36,7 +36,7 @@ public class HTML
      * @return title tags with the specified innerHTML */
     public static String title(String innerHTML)
     {
-        return "<title>" + innerHTML + "</title>";
+        return "<title>" + innerHTML + "</title>\n";
     }
     
     /** Creates and returns body tags with the specified innerHTML
@@ -44,7 +44,7 @@ public class HTML
      * @return body tags with the specified innerHTML */
     public static String body(String innerHTML)
     {
-        return "<body>" + innerHTML + "</body>";
+        return "<body>\n" + innerHTML + "</body>\n";
     }
     
     /** Creates and returns header tags with the specified innerHTML
@@ -52,7 +52,7 @@ public class HTML
      * @return header tags with the specified innerHTML */
     public static String h1(String innerHTML)
     {
-        return "<h1>" + innerHTML + "</h1>";
+        return "<h1>" + innerHTML + "</h1>\n";
     }
     
     /** Creates and returns paragraph tags with the specified innerHTML
@@ -60,14 +60,14 @@ public class HTML
      * @return paragraph tags with the specified innerHTML */
     public static String p(String innerHTML)
     {
-        return "<p>" + innerHTML + "</p>";
+        return "<p>" + innerHTML + "</p>\n";
     }
    
     /** Creates and returns a HTML break
      * @return A HTML break */
     public static String br()
     {
-        return "<br>";
+        return "<br>\n";
     }
     
     /** Creates and returns anchor tags with the specified HREF and innerHTML
@@ -76,6 +76,6 @@ public class HTML
      * @return anchor tags with the specified HREF and innerHTML */
     public static String a(String href, String innerHTML)
     {
-        return "<a href=\"" + href + "\">" + innerHTML + "</a>";
+        return "<a href=\"" + href + "\">" + innerHTML + "</a>\n";
     }
 }
