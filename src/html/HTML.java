@@ -39,6 +39,11 @@ public class HTML
         return "<title>" + innerHTML + "</title>\n";
     }
     
+    public static String stylesheet(String href)
+    {
+        return "<link rel=\"stylesheet\" type=\"text/css\" href=\"" + href + "\">\n";
+    }
+    
     /** Creates and returns body tags with the specified innerHTML
      * @param innerHTML The content between the body tags
      * @return body tags with the specified innerHTML */

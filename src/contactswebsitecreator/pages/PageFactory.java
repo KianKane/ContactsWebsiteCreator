@@ -20,6 +20,14 @@ public class PageFactory
         this.path = path;
     }
     
+    /** Creates and returns a style page
+     * @param sourceFullPath The path of the source style sheet to use
+     * @return A StylePage as a Page */
+    public Page getStylePage(String sourceFullPath)
+    {
+        return (Page)new StylePage(path, sourceFullPath);
+    }
+    
     /** Creates and returns an index page
      * @param contacts The list of contacts for the index page to link to
      * @return An IndexPage as a Page */

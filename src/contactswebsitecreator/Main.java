@@ -30,6 +30,7 @@ public class Main
         
         // Create files
         PageFactory creator = new PageFactory(path);
+        creator.getStylePage(System.getProperty("user.dir") + "/style.css").generatePage();
         creator.getIndexPage(dataSet.contacts).generatePage();
         FolderUtilities.createFolders(path + "/individualContacts");
         for (Contact contact : dataSet.contacts)

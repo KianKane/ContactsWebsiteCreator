@@ -29,14 +29,16 @@ public class ContactPage extends Page
         String content = 
                     HTML.doctype() + 
                     HTML.html(
-                            HTML.head(HTML.title(contact.forename + " " + contact.surname)) + 
+                            HTML.head(
+                                    HTML.title(contact.forename + " " + contact.surname) + 
+                                    HTML.stylesheet("../style.css")) + 
                             HTML.body(
                                     HTML.h1(contact.forename + " " + contact.surname) + 
                                     HTML.p("Contact ID: " + contact.id) +
                                     HTML.p("Full Name: " + contact.forename + " " + contact.surname) +
                                     HTML.p("Email Address: " + contact.email) +
                                     HTML.p("Phone Number: " + contact.phone) +
-                                    HTML.a("index.html", "<-- Go Back")));
+                                    HTML.a("../index.html", "<-- Go Back")));
         
         try
         {

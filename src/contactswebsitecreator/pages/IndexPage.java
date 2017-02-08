@@ -36,8 +36,11 @@ public class IndexPage extends Page
         String content = 
                 HTML.doctype() + 
                 HTML.html(
-                        HTML.head(HTML.title("All Contacts")) + 
-                        HTML.body(contactsHTML));
+                        HTML.head(
+                                HTML.title("All Contacts") +
+                                HTML.stylesheet("style.css")) + 
+                        HTML.body(
+                                contactsHTML));
         
         try
         {
