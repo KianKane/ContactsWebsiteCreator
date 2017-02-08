@@ -30,7 +30,7 @@ public class IndexPage extends Page
         String contactsHTML = "";
         for (Contact contact : contacts)
         {
-            contactsHTML += HTML.a(contact.id + ".html", contact.id + " " + contact.forename + " " + contact.surname) + HTML.br();
+            contactsHTML += HTML.a("individualContacts/" + contact.id + ".html", contact.id + " " + contact.forename + " " + contact.surname) + HTML.br();
         }
         
         String content = 

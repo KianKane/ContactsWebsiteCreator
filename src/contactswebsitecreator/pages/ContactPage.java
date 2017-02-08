@@ -20,7 +20,7 @@ public class ContactPage extends Page
      * @param contact The contact to describe in the page */
     public ContactPage(String path, Contact contact)
     {
-        super(path + "/" + contact.id + ".html");
+        super(path + "/individualContacts/" + contact.id + ".html");
         this.contact = contact;
     }
 

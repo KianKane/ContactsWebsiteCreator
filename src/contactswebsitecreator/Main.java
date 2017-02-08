@@ -31,6 +31,7 @@ public class Main
         // Create files
         PageFactory creator = new PageFactory(path);
         creator.getIndexPage(dataSet.contacts).generatePage();
+        FolderUtilities.createFolders(path + "/individualContacts");
         for (Contact contact : dataSet.contacts)
         {
             creator.getContactPage(contact).generatePage();
