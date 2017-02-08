@@ -1,5 +1,6 @@
 package filesystem;
 
+import input.Prompter;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
@@ -17,7 +18,11 @@ public class FolderUtilities
     public static void createFolders(String path)
     {
         File directory = new File(path);
-        directory.mkdirs();
+        if (!directory.exists())
+        {
+            if (Prompter.YesNo(path + " directory not found, create directory?", "Create Directory"))
+                directory.mkdirs();
+        }
     }
     
     /** Deletes files stored within the specified folder
@@ -25,9 +30,15 @@ public class FolderUtilities
     public static void clearFolder(String path)
     {
         File directory = new File(path);
-        for (File file: directory.listFiles())
+        if (directory.list().length > 0)
         {
-            file.delete();
+            if (Prompter.YesNo(path + " directory contains files, delete files from directory?", "Clear Directory"))
+            {
+                for (File file: directory.listFiles())
+                {
+                    file.delete();
+                }
+            }
         }
     }
     
