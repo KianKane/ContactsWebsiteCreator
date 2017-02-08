@@ -1,5 +1,6 @@
-package contactswebsitecreator;
+package contactswebsitecreator.pages;
 
+import contactswebsitecreator.Contact;
 import java.util.ArrayList;
 
 /**

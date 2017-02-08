@@ -1,4 +1,4 @@
-package contactswebsitecreator;
+package contactswebsitecreator.pages;
 
 /**
  * A base page class

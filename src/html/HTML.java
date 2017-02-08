@@ -1,4 +1,4 @@
-package contactswebsitecreator;
+package html;
 
 /**
  * Used to create HTML strings

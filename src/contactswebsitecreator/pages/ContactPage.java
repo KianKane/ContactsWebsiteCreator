@@ -1,5 +1,8 @@
-package contactswebsitecreator;
+package contactswebsitecreator.pages;
 
+import contactswebsitecreator.Contact;
+import filesystem.FileWriter;
+import html.HTML;
 import java.io.IOException;
 
 /**
