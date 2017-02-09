@@ -30,7 +30,14 @@ public class IndexPage extends Page
         String contactsHTML = "";
         for (Contact contact : contacts)
         {
-            contactsHTML += HTML.a("individualContacts/" + contact.id + ".html", contact.id + " " + contact.forename + " " + contact.surname) + HTML.br();
+            contactsHTML += 
+                    HTML.tr(
+                            HTML.td(
+                                    HTML.a("individualContacts/" + contact.id + ".html", Integer.toString(contact.id))) +
+                            HTML.td(
+                                    HTML.a("individualContacts/" + contact.id + ".html", contact.forename)) +
+                            HTML.td(
+                                    HTML.a("individualContacts/" + contact.id + ".html", contact.surname)));
         }
         
         String content = 
@@ -38,9 +45,14 @@ public class IndexPage extends Page
                 HTML.html(
                         HTML.head(
                                 HTML.title("All Contacts") +
-                                HTML.stylesheet("style.css")) + 
+                                HTML.stylesheet("style.css")) +
                         HTML.body(
-                                contactsHTML));
+                                HTML.h1("All Contacts") +
+                                HTML.inputText() +
+                                HTML.table(
+                                        HTML.tr(HTML.th("Contact ID") + HTML.th("Forename") + HTML.th("Surname")) +
+                                        contactsHTML) +
+                                HTML.script("script.js")));
         
         try
         {

@@ -28,6 +28,14 @@ public class PageFactory
         return (Page)new StylePage(path, sourceFullPath);
     }
     
+    /** Creates and returns a script page
+     * @param sourceFullPath The path of the source script file to use
+     * @return A ScriptPage as a Page */
+    public Page getScriptPage(String sourceFullPath)
+    {
+        return (Page)new ScriptPage(path, sourceFullPath);
+    }
+    
     /** Creates and returns an index page
      * @param contacts The list of contacts for the index page to link to
      * @return An IndexPage as a Page */

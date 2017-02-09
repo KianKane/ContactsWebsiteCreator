@@ -1,10 +1,32 @@
 *
 {
-margin: 0px;
-padding: 0px;
+	margin: 0px;
+	padding: 0px;
 }
 
 a
 {
-color: red;
+	display: block;
+}
+
+table
+{
+	border-collapse: collapse;
+	width: 36em;
+}
+
+td, th
+{
+	border: 1px solid gray;
+	width: 12em;
+}
+
+tr
+{
+	background-color: white;
+}
+
+tr:hover
+{
+	background-color: #999999;
 }
