@@ -1,8 +1,6 @@
 package contactswebsitecreator.pages;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
+import filesystem.FolderUtilities;
 
 /**
  * Generates a CSS style page by copying the style page stored with the program
@@ -25,15 +23,6 @@ public class StylePage extends Page
 
     @Override public void generatePage()
     {
-        try
-        {
-            File source = new File(sourceFullPath);
-            File target = new File(path);
-            Files.copy(source.toPath(), target.toPath());
-        }
-        catch (IOException e)
-        {
-            System.out.println ("Unable to create style page: " + e.getMessage());
-        }
+        FolderUtilities.copyFile(sourceFullPath, path);
     }
 }

@@ -1,14 +1,12 @@
 package contactswebsitecreator.pages;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
+import filesystem.FolderUtilities;
 
 /**
  * Generates a JavaScript file by copying the script file stored with the program
  * 
  * @author Kian Kane
- * @version 08/02/2017
+ * @version 09/02/2017
  */
 public class ScriptPage extends Page
 {
@@ -25,15 +23,6 @@ public class ScriptPage extends Page
 
     @Override public void generatePage()
     {
-        try
-        {
-            File source = new File(sourceFullPath);
-            File target = new File(path);
-            Files.copy(source.toPath(), target.toPath());
-        }
-        catch (IOException e)
-        {
-            System.out.println ("Unable to create script file: " + e.getMessage());
-        }
+        FolderUtilities.copyFile(sourceFullPath, path);
     }
 }
