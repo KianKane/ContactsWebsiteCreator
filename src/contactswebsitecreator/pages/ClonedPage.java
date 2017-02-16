@@ -1,6 +1,6 @@
 package contactswebsitecreator.pages;
 
-import filesystem.FolderUtilities;
+import filesystem.FileWriter;
 
 /**
  * Generates a file by copying another file from a specified location
@@ -23,6 +23,6 @@ public class ClonedPage extends Page
 
     @Override public void generatePage()
     {
-        FolderUtilities.copyFile(sourceFullPath, path);
+        FileWriter.copyFile(sourceFullPath, path);
     }
 }

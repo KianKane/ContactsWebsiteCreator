@@ -3,14 +3,13 @@ package filesystem;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import javax.swing.JOptionPane;
 
 /**
  * Provides some useful methods for dealing with folders
  * 
  * @author Kian Kane
- * @version 06/02/2017
+ * @version 16/02/2017
  */
 public class FolderUtilities
 {
@@ -52,23 +51,6 @@ public class FolderUtilities
         catch (IOException e)
         {
             System.err.println("Unable to open folder: " + e.getMessage());
-        }
-    }
-    
-    /** Copy the specified file to the specified location
-     * @param fromPath The path of the file to copy from
-     * @param toPath The path of the file to copy to */
-    public static void copyFile(String fromPath, String toPath)
-    {
-        try
-        {
-            File source = new File(fromPath);
-            File target = new File(toPath);
-            Files.copy(source.toPath(), target.toPath());
-        }
-        catch (IOException e)
-        {
-            System.out.println ("Unable to copy file from " + fromPath + " to " + toPath + ": " + e.getMessage());
         }
     }
 }
