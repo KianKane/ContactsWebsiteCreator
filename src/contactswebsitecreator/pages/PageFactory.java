@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * Creates HTML pages and uses the FileWriter to write them to disk
  * 
  * @author Kian Kane
- * @version 08/02/2017
+ * @version 16/02/2017
  */
 public class PageFactory
 {
@@ -22,18 +22,18 @@ public class PageFactory
     
     /** Creates and returns a style page
      * @param sourceFullPath The path of the source style sheet to use
-     * @return A StylePage as a Page */
+     * @return A style page as a Page */
     public Page getStylePage(String sourceFullPath)
     {
-        return (Page)new StylePage(path, sourceFullPath);
+        return (Page)new ClonedPage(path + "/style.css", sourceFullPath);
     }
     
     /** Creates and returns a script page
      * @param sourceFullPath The path of the source script file to use
-     * @return A ScriptPage as a Page */
+     * @return A script page as a Page */
     public Page getScriptPage(String sourceFullPath)
     {
-        return (Page)new ScriptPage(path, sourceFullPath);
+        return (Page)new ClonedPage(path + "/script.js", sourceFullPath);
     }
     
     /** Creates and returns an index page
