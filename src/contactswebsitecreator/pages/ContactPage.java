@@ -3,7 +3,6 @@ package contactswebsitecreator.pages;
 import contactswebsitecreator.Contact;
 import filesystem.FileWriter;
 import html.HTML;
-import java.io.IOException;
 
 /**
  * Generates a contact page for a specific contact
