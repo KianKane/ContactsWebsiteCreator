@@ -40,13 +40,6 @@ public class ContactPage extends Page
                                     HTML.p("Phone Number: " + contact.phone) +
                                     HTML.a("../index.html", "<-- Go Back")));
         
-        try
-        {
-            FileWriter.writeFile(path, content);
-        }
-        catch (IOException e)
-        {
-            System.out.println ("Unable to create contact page (Contact ID: " + contact.id + "): " + e.getMessage());
-        }
+        FileWriter.writeFile(path, content);
     }  
 }

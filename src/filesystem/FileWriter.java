@@ -16,15 +16,22 @@ public class FileWriter
     /** Writes a file to disk
      * @param fullPath Full path including filename and extention
      * @param content The contents of the file
-     * @return Returns the created file
-     * @throws java.io.IOException when the PrintWriter fails to correctly save the file */
-    public static File writeFile(String fullPath, String content) throws IOException
+     * @return Returns the created file */
+    public static File writeFile(String fullPath, String content)
     {
-        File file = new File(fullPath);
-        PrintWriter writer = new PrintWriter(file);
-        writer.write(content);
-        writer.close();
-        return file;
+        try
+        {
+            File file = new File(fullPath);
+            PrintWriter writer = new PrintWriter(file);
+            writer.write(content);
+            writer.close();
+            return file;
+        }
+        catch (IOException e)
+        {
+            System.out.println("Unable to write file " + fullPath + ": " + e.getMessage());
+            return null;
+        }
     }
     
     /** Copy the specified file to the specified location
@@ -40,7 +47,7 @@ public class FileWriter
         }
         catch (IOException e)
         {
-            System.out.println ("Unable to copy file from " + fromPath + " to " + toPath + ": " + e.getMessage());
+            System.out.println("Unable to copy file from " + fromPath + " to " + toPath + ": " + e.getMessage());
         }
     }
 }

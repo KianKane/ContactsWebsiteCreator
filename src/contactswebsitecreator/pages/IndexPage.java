@@ -54,13 +54,6 @@ public class IndexPage extends Page
                                         contactsHTML) +
                                 HTML.script("script.js")));
         
-        try
-        {
-            FileWriter.writeFile(path, content);
-        }
-        catch (IOException e)
-        {
-            System.out.println ("Unable to create index page: " + e.getMessage());
-        }
+        FileWriter.writeFile(path, content);
     }
 }
