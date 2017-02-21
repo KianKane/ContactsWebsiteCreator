@@ -12,7 +12,6 @@ public class Main
 {
     /** Program starting point
      * @param args the command line arguments */
-    @SuppressWarnings("empty-statement")
     public static void main(String[] args)
     {
         String path = System.getProperty("user.home") + "/desktop/contacts";
