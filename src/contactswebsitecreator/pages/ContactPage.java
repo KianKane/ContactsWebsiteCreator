@@ -10,7 +10,7 @@ import html.HTML;
  * @author Kian Kane
  * @version 08/02/2017
  */
-public class ContactPage extends Page
+public class ContactPage extends HtmlPage
 {
     private final Contact contact;
 
@@ -23,9 +23,14 @@ public class ContactPage extends Page
         this.contact = contact;
     }
 
-    @Override public void generatePage()
+    @Override public String getRaw()
     {
-        String content = 
+        return contact.toString() + "\n";
+    }
+
+    @Override public String getHtml()
+    {
+        String html = 
                     HTML.doctype() + 
                     HTML.html(
                             HTML.head(
@@ -38,7 +43,6 @@ public class ContactPage extends Page
                                     HTML.p("Email Address: " + contact.email) +
                                     HTML.p("Phone Number: " + contact.phone) +
                                     HTML.a("../index.html", "<-- Go Back")));
-        
-        FileWriter.writeFile(path, content);
+        return html;
     }  
 }

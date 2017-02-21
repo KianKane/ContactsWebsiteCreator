@@ -9,9 +9,9 @@ import java.util.ArrayList;
  * Generates an index page which lists and links to a number of contacts
  * 
  * @author Kian Kane
- * @version 08/02/2017
+ * @version 21/02/2017
  */
-public class IndexPage extends Page
+public class IndexPage extends HtmlPage
 {
     private final ArrayList<Contact> contacts;
     
@@ -24,12 +24,22 @@ public class IndexPage extends Page
         this.contacts = contacts;
     }
 
-    @Override public void generatePage()
+    @Override public String getRaw()
     {
-        String contactsHTML = "";
+        String raw = "";
         for (Contact contact : contacts)
         {
-            contactsHTML += 
+            raw += contact.toString() + "\n";
+        }
+        return raw;
+    }
+
+    @Override public String getHtml()
+    {
+        String contactsHtml = "";
+        for (Contact contact : contacts)
+        {
+            contactsHtml += 
                     HTML.tr(
                             HTML.td(
                                     HTML.a("individualContacts/" + contact.id + ".html", Integer.toString(contact.id))) +
@@ -38,8 +48,7 @@ public class IndexPage extends Page
                             HTML.td(
                                     HTML.a("individualContacts/" + contact.id + ".html", contact.surname)));
         }
-        
-        String content = 
+        String html = 
                 HTML.doctype() + 
                 HTML.html(
                         HTML.head(
@@ -50,9 +59,8 @@ public class IndexPage extends Page
                                 HTML.inputText() +
                                 HTML.table(
                                         HTML.tr(HTML.th("Contact ID") + HTML.th("Forename") + HTML.th("Surname")) +
-                                        contactsHTML) +
+                                        contactsHtml) +
                                 HTML.script("script.js")));
-        
-        FileWriter.writeFile(path, content);
+        return html;
     }
 }
