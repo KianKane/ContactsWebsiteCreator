@@ -29,13 +29,9 @@ public class FolderUtilities
         File directory = new File(path);
         if (directory.list().length > 0)
         {
-            int reply = JOptionPane.showConfirmDialog(null, path + " directory contains files, delete files from directory?", "Clear Directory", JOptionPane.YES_NO_OPTION);
-            if (reply == JOptionPane.YES_OPTION)
+            for (File file: directory.listFiles())
             {
-                for (File file: directory.listFiles())
-                {
-                    file.delete();
-                }
+                file.delete();
             }
         }
     }
