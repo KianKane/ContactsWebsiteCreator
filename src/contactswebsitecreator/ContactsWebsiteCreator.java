@@ -4,6 +4,7 @@ import contactswebsitecreator.pages.HtmlPage;
 import contactswebsitecreator.pages.Page;
 import contactswebsitecreator.pages.PageFactory;
 import filesystem.FolderUtilities;
+import java.util.HashMap;
 
 /**
  * Acts as the primary program starting point
@@ -17,6 +18,7 @@ public class ContactsWebsiteCreator
     private final HtmlPage indexPage;
     private final HtmlPage[] contactPages;
     private final Page[] additionalPages;
+    private final HashMap<Integer, HtmlPage> contactsHashMap;
     
     /** Constructor
      * @param path Path to the folder the contacts will be stored in
@@ -35,9 +37,11 @@ public class ContactsWebsiteCreator
         PageFactory factory = new PageFactory(path);
         indexPage = factory.getIndexPage(dataSet.contacts);
         contactPages = new HtmlPage[dataSet.contacts.size()];
+        contactsHashMap = new HashMap();
         for (int i = 0; i < dataSet.contacts.size(); i++)
         {
             contactPages[i] = factory.getContactPage(dataSet.contacts.get(i));
+            contactsHashMap.put(dataSet.contacts.get(i).id, contactPages[i]);
         }
         additionalPages = new Page[]{
             factory.getStylePage(System.getProperty("user.dir") + "/style.css"),
@@ -60,24 +64,30 @@ public class ContactsWebsiteCreator
      * @param id The ID of the contact page to print from */
     public void displayContactRaw(int id)
     {
-        System.out.println("displayContactRaw(" + id + ")");
-        // TODO
+        HtmlPage contactPage = contactsHashMap.get(id);
+        if (contactPage == null)
+            System.out.println("No contact with that id exists");
+        else
+            System.out.println(contactPage.getRaw());
     }
     
     /** Prints the HTML for a specific contact page 
      * @param id The ID of the contact page to print from */
     public void displayContactHtml(int id)
     {
-        System.out.println("displayContactHtml(" + id + ")");
-        // TODO
+        HtmlPage contactPage = contactsHashMap.get(id);
+        if (contactPage == null)
+            System.out.println("No contact with that id exists\n");
+        else
+            System.out.println(contactPage.getHtml());
     }
     
     /** Generates files for all of the pages */
     public void generateFiles()
     {
         FolderUtilities.createFolders(path);
-        FolderUtilities.createFolders(path + "/individualContacts");
         FolderUtilities.clearFolder(path);
+        FolderUtilities.createFolders(path + "/individualContacts");
         FolderUtilities.clearFolder(path + "/individualContacts");
         
         indexPage.generatePage();
