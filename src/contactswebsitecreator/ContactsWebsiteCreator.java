@@ -44,6 +44,34 @@ public class ContactsWebsiteCreator
             factory.getScriptPage(System.getProperty("user.dir") + "/script.js")};
     }
     
+    /** Prints the raw data from the index page */
+    public void displayIndexRaw()
+    {
+        System.out.println(indexPage.getRaw());
+    }
+    
+    /** Prints the HTML for the index page */
+    public void displayIndexHtml()
+    {
+        System.out.println(indexPage.getHtml());
+    }
+    
+    /** Prints the raw data from a specific contact page 
+     * @param id The ID of the contact page to print from */
+    public void displayContactRaw(int id)
+    {
+        System.out.println("displayContactRaw(" + id + ")");
+        // TODO
+    }
+    
+    /** Prints the HTML for a specific contact page 
+     * @param id The ID of the contact page to print from */
+    public void displayContactHtml(int id)
+    {
+        System.out.println("displayContactHtml(" + id + ")");
+        // TODO
+    }
+    
     /** Generates files for all of the pages */
     public void generateFiles()
     {
