@@ -4,7 +4,7 @@ package contactswebsitecreator;
  * Contains all of the data for a single contact
  * 
  * @author Kian Kane
- * @version 26/01/2017
+ * @version 20/02/2017
  */
 public class Contact
 {
@@ -27,5 +27,10 @@ public class Contact
         this.surname = surname;
         this.email = email;
         this.phone = phone;
+    }
+    
+    @Override public String toString()
+    {
+        return "Contact " + id + " | Name: " + forename + " " + surname + " | Email: " + email + " | Phone: " + phone;
     }
 }
