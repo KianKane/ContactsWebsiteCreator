@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * Creates HTML pages and uses the FileWriter to write them to disk
  * 
  * @author Kian Kane
- * @version 16/02/2017
+ * @version 21/02/2017
  */
 public class PageFactory
 {
@@ -39,16 +39,16 @@ public class PageFactory
     /** Creates and returns an index page
      * @param contacts The list of contacts for the index page to link to
      * @return An IndexPage as a Page */
-    public Page getIndexPage(ArrayList<Contact> contacts)
+    public HtmlPage getIndexPage(ArrayList<Contact> contacts)
     {
-        return (Page)new IndexPage(path, contacts);
+        return (HtmlPage)new IndexPage(path, contacts);
     }
     
     /** Creates and returns a contact page
      * @param contact The contact to describe in the page
      * @return A ContactPage as a Page */
-    public Page getContactPage(Contact contact)
+    public HtmlPage getContactPage(Contact contact)
     {
-        return (Page)new ContactPage(path, contact);
+        return (HtmlPage)new ContactPage(path, contact);
     }
 }
