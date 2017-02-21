@@ -12,6 +12,7 @@ public class Main
 {
     /** Program starting point
      * @param args the command line arguments */
+    @SuppressWarnings("empty-statement")
     public static void main(String[] args)
     {
         String path = System.getProperty("user.home") + "/desktop/contacts";
@@ -27,26 +28,57 @@ public class Main
         {
             System.out.println("Menu: ");
             System.out.println("\tDisplay all contacts (display)");
+            System.out.println("\tDisplay contact      (display [contactID])");
             System.out.println("\tGenerate files       (generate)");
             System.out.println("\tDisplay index html   (display-html)");
+            System.out.println("\tDisplay contact html (display-html [contactID])");
             System.out.println("\tExit                 (exit)");
             System.out.print("Enter what you want to do: ");
+            String[] choices = input.nextLine().trim().toLowerCase().split(" ");
+            System.out.println();
             
-            switch(input.next().trim().toLowerCase())
+            String choice = "";
+            int id = -1;
+            if (choices.length > 0)
+                choice = choices[0];
+            if (choices.length > 1)
+            {
+                try
+                {
+                    id = Integer.parseInt(choices[1]);
+                }
+                catch (NumberFormatException e)
+                {
+                    System.out.println("Invalid contactID");
+                    choice = "";
+                }
+            }
+            
+            switch(choice)
             {
                 case "display":
-                    cwc.displayIndexRaw();
+                    if (id == -1)
+                        cwc.displayIndexRaw();
+                    else
+                        cwc.displayContactRaw(id);
                     break;
+                    
                 case "generate":
                     cwc.generateFiles();
                     break;
+                    
                 case "display-html":
-                    cwc.displayIndexHtml();
+                    if (id == -1)
+                        cwc.displayIndexHtml();
+                    else
+                        cwc.displayContactHtml(id);
                     break;
+                    
                 case "exit":
                     System.out.println("Finished");
                     done = true;
                     break;
+                    
                 default:
                     System.out.println("Invalid input, please run the program again");
                     done = true;
