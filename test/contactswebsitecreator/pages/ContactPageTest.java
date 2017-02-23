@@ -87,6 +87,5 @@ public class ContactPageTest
         contactPage.generatePage();
         String result = fileWriterMock.output.replace("\n", "");
         assertEquals(expResult, result);
-        
     }
 }

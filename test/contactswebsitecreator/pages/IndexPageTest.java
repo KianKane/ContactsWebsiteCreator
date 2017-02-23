@@ -134,6 +134,5 @@ public class IndexPageTest
         indexPage.generatePage();
         String result = fileWriterMock.output.replace("\n", "");
         assertEquals(expResult, result);
-        
     }
 }
