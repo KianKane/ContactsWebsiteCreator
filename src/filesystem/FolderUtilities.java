@@ -3,7 +3,6 @@ package filesystem;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
-import javax.swing.JOptionPane;
 
 /**
  * Provides some useful methods for dealing with folders
