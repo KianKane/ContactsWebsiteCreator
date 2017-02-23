@@ -26,12 +26,14 @@ public class Main
         do
         {
             System.out.println("Menu: ");
-            System.out.println("\tDisplay all contacts (display)");
-            System.out.println("\tDisplay contact      (display [contactID])");
-            System.out.println("\tGenerate files       (generate)");
-            System.out.println("\tDisplay index html   (display-html)");
-            System.out.println("\tDisplay contact html (display-html [contactID])");
-            System.out.println("\tExit                 (exit)");
+            System.out.println("\tDisplay all contacts    (display)");
+            System.out.println("\tDisplay contact         (display [contactID])");
+            System.out.println("\tGenerate files          (generate)");
+            System.out.println("\tDisplay index html      (display-html)");
+            System.out.println("\tDisplay contact html    (display-html [contactID])");
+            System.out.println("\tSet index description   (set-content)");
+            System.out.println("\tSet contact description (set-content [contactID])");
+            System.out.println("\tExit                    (exit)");
             System.out.print("Enter what you want to do: ");
             String[] choices = input.nextLine().trim().toLowerCase().split(" ");
             System.out.println();
@@ -71,6 +73,23 @@ public class Main
                         cwc.displayIndexHtml();
                     else
                         cwc.displayContactHtml(id);
+                    break;
+                
+                case "set-content":
+                    if (id == -1)
+                    {
+                        System.out.print("Enter content for index page: ");
+                        String content = input.nextLine();
+                        cwc.setIndexUserContent(content);
+                        System.out.println("Content added\n");
+                    }
+                    else
+                    {
+                        System.out.print("Enter content for contact " + id + ": ");
+                        String content = input.nextLine();
+                        cwc.setContactUserContent(content, id);
+                        System.out.println("Content added\n");
+                    }
                     break;
                     
                 case "exit":

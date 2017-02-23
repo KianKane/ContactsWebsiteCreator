@@ -82,6 +82,25 @@ public class ContactsWebsiteCreator
             System.out.println(contactPage.getHtml());
     }
     
+    /** Sets the user content of the index page
+     * @param userContent The user content to set for the index page */
+    public void setIndexUserContent(String userContent)
+    {
+        indexPage.setUserContent(userContent);
+    }
+    
+    /** Sets the user content of a specified contact page
+     * @param userContent The user content to set for the specified contact page
+     * @param id The ID of the contact page to modify */
+    public void setContactUserContent(String userContent, int id)
+    {
+        HtmlPage contactPage = contactsHashMap.get(id);
+        if (contactPage == null)
+            System.out.println("No contact with that id exists\n");
+        else
+            contactPage.setUserContent(userContent);
+    }
+    
     /** Generates files for all of the pages */
     public void generateFiles()
     {

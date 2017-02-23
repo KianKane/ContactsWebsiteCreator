@@ -10,9 +10,19 @@ import filesystem.IFileWriter;
  */
 public abstract class HtmlPage extends Page
 {
+    protected String userContent;
+    
+    /** Sets the user content for this HTML page
+     * @param userContent The new user content */
+    public void setUserContent(String userContent)
+    {
+        this.userContent = userContent;
+    }
+    
     public HtmlPage(String path, IFileWriter fileWriter)
     {
         super(path, fileWriter);
+        userContent = "";
     }
     
     /** Gets the data from this page without HTML tags
@@ -22,7 +32,7 @@ public abstract class HtmlPage extends Page
     /** Gets the HTML representation of this page
      * @return A string containing the HTML representation of this page */
     public abstract String getHtml();
-    
+
     @Override public void generatePage()
     {
         fileWriter.writeFile(path, getHtml());

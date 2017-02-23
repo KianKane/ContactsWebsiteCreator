@@ -43,6 +43,7 @@ public class ContactPage extends HtmlPage
                                     HTML.p("Full Name: " + contact.forename + " " + contact.surname) +
                                     HTML.p("Email Address: " + contact.email) +
                                     HTML.p("Phone Number: " + contact.phone) +
+                                    HTML.p(userContent) +
                                     HTML.a("../index.html", "<-- Go Back")));
         return html;
     }  

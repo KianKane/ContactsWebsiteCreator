@@ -84,6 +84,7 @@ public class IndexPageTest
                 "<td><a href=\"individualContacts/3.html\">Jones</a></td>" +
                 "</tr>" +
                 "</table>" +
+                "<p></p>" +
                 "<script src=\"script.js\"></script>" +
                 "</body>" +
                 "</html>";
@@ -128,6 +129,7 @@ public class IndexPageTest
                 "<td><a href=\"individualContacts/3.html\">Jones</a></td>" +
                 "</tr>" +
                 "</table>" +
+                "<p></p>" +
                 "<script src=\"script.js\"></script>" +
                 "</body>" +
                 "</html>";

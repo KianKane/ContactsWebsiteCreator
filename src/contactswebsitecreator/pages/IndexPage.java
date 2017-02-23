@@ -61,6 +61,7 @@ public class IndexPage extends HtmlPage
                                 HTML.table(
                                         HTML.tr(HTML.th("Contact ID") + HTML.th("Forename") + HTML.th("Surname")) +
                                         contactsHtml) +
+                                HTML.p(userContent) +
                                 HTML.script("script.js")));
         return html;
     }

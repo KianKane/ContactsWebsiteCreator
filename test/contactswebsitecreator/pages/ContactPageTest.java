@@ -58,6 +58,7 @@ public class ContactPageTest
                 "<p>Full Name: John Smith</p>" +
                 "<p>Email Address: j.smith@email.com</p>" +
                 "<p>Phone Number: 111.111.1111</p>" +
+                "<p></p>" +
                 "<a href=\"../index.html\"><-- Go Back</a></body>" +
                 "</html>";
         String result = contactPage.getHtml().replace("\n", "");
@@ -82,6 +83,7 @@ public class ContactPageTest
                 "<p>Full Name: John Smith</p>" +
                 "<p>Email Address: j.smith@email.com</p>" +
                 "<p>Phone Number: 111.111.1111</p>" +
+                "<p></p>" +
                 "<a href=\"../index.html\"><-- Go Back</a></body>" +
                 "</html>";
         contactPage.generatePage();
