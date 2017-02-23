@@ -1,7 +1,6 @@
 package contactswebsitecreator.pages;
 
 import contactswebsitecreator.Contact;
-import filesystem.FileWriter;
 import html.HTML;
 
 /**
