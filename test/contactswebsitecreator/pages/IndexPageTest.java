@@ -1,9 +1,8 @@
 package contactswebsitecreator.pages;
 
 import contactswebsitecreator.Contact;
-import filesystem.IFileWriter;
-import java.io.File;
 import java.util.ArrayList;
+import mocks.FileWriterMock;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -135,26 +134,5 @@ public class IndexPageTest
         String result = fileWriterMock.output.replace("\n", "");
         assertEquals(expResult, result);
         
-    }
-    
-    /** Mock FileWriter */
-    private class FileWriterMock implements IFileWriter
-    {
-        public String output;
-        
-        public FileWriterMock()
-        {
-            output = "";
-        }
-        
-        @Override public File writeFile(String fullPath, String content)
-        {
-            output = fullPath + " " + content;
-            return null;
-        }
-
-        @Override public void copyFile(String fromPath, String toPath)
-        {
-        }
     }
 }
