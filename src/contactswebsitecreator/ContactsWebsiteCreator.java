@@ -66,7 +66,7 @@ public class ContactsWebsiteCreator
     {
         HtmlPage contactPage = contactsHashMap.get(id);
         if (contactPage == null)
-            System.out.println("No contact with that id exists");
+            System.out.println("No contact with that id exists\n");
         else
             System.out.println(contactPage.getRaw());
     }
