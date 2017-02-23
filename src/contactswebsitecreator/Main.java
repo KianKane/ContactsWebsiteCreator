@@ -1,5 +1,6 @@
 package contactswebsitecreator;
 
+import contactswebsitecreator.acceptancetesting.ContactsWebsiteCreatorAcceptanceTests;
 import java.util.Scanner;
 
 /**
@@ -20,7 +21,7 @@ public class Main
         String pass = "password";
         
         ContactsWebsiteCreator cwc = new ContactsWebsiteCreator(path, host, user, pass);
-        userControlledMenuLoop(cwc);
+        ContactsWebsiteCreatorAcceptanceTests.runAllTests(cwc);
     }
     
     public static void userControlledMenuLoop(ContactsWebsiteCreator cwc)

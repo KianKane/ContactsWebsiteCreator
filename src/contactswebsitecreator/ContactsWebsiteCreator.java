@@ -4,6 +4,7 @@ import contactswebsitecreator.pages.HtmlPage;
 import contactswebsitecreator.pages.Page;
 import contactswebsitecreator.pages.PageFactory;
 import filesystem.FolderUtilities;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -116,5 +117,12 @@ public class ContactsWebsiteCreator
             page.generatePage();
         
         FolderUtilities.openFolder(path);
+    }
+    
+    /** Returns a list of all of the contact IDs
+     * @return A list of all of the contact IDs */
+    public ArrayList<Integer> GetAllContactIDs()
+    {
+        return new ArrayList<Integer>(contactsHashMap.keySet());
     }
 }
