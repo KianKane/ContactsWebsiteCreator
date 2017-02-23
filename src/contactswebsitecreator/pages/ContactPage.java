@@ -1,13 +1,14 @@
 package contactswebsitecreator.pages;
 
 import contactswebsitecreator.Contact;
+import filesystem.IFileWriter;
 import html.HTML;
 
 /**
  * Generates a contact page for a specific contact
  * 
  * @author Kian Kane
- * @version 08/02/2017
+ * @version 23/02/2017
  */
 public class ContactPage extends HtmlPage
 {
@@ -15,10 +16,11 @@ public class ContactPage extends HtmlPage
 
     /** Constructor
      * @param path The path to the folder to be used
-     * @param contact The contact to describe in the page */
-    public ContactPage(String path, Contact contact)
+     * @param contact The contact to describe in the page
+     * @param fileWriter The instance of an IFileWriter to use when generating files */
+    public ContactPage(String path, Contact contact, IFileWriter fileWriter)
     {
-        super(path + "/individualContacts/" + contact.id + ".html");
+        super(path + "/individualContacts/" + contact.id + ".html", fileWriter);
         this.contact = contact;
     }
 

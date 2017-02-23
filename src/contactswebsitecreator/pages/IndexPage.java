@@ -1,6 +1,7 @@
 package contactswebsitecreator.pages;
 
 import contactswebsitecreator.Contact;
+import filesystem.IFileWriter;
 import html.HTML;
 import java.util.ArrayList;
 
@@ -16,10 +17,11 @@ public class IndexPage extends HtmlPage
     
     /** Constructor
      * @param path The path to the folder to be used
-     * @param contacts The list of contacts for the index page to link to */
-    public IndexPage(String path, ArrayList<Contact> contacts)
+     * @param contacts The list of contacts for the index page to link to
+     * @param fileWriter The instance of an IFileWriter to use when generating files */
+    public IndexPage(String path, ArrayList<Contact> contacts, IFileWriter fileWriter)
     {
-        super(path + "/index.html");
+        super(path + "/index.html", fileWriter);
         this.contacts = contacts;
     }
 

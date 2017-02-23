@@ -1,18 +1,18 @@
 package contactswebsitecreator.pages;
 
-import filesystem.FileWriter;
+import filesystem.IFileWriter;
 
 /**
  * A base class for all HTML based pages to inherit from
  * 
  * @author Kian Kane
- * @version 21/02/2017
+ * @version 23/02/2017
  */
 public abstract class HtmlPage extends Page
 {
-    public HtmlPage(String path)
+    public HtmlPage(String path, IFileWriter fileWriter)
     {
-        super(path);
+        super(path, fileWriter);
     }
     
     /** Gets the data from this page without HTML tags
@@ -25,6 +25,6 @@ public abstract class HtmlPage extends Page
     
     @Override public void generatePage()
     {
-        FileWriter.writeFile(path, getHtml());
+        fileWriter.writeFile(path, getHtml());
     }
 }

@@ -9,15 +9,11 @@ import java.nio.file.Files;
  * Writes files to the disk
  * 
  * @author Kian Kane
- * @version 16/02/2017
+ * @version 23/02/2017
  */
-public class FileWriter
+public class FileWriter implements IFileWriter
 {
-    /** Writes a file to disk
-     * @param fullPath Full path including filename and extention
-     * @param content The contents of the file
-     * @return Returns the created file */
-    public static File writeFile(String fullPath, String content)
+    @Override public File writeFile(String fullPath, String content)
     {
         try
         {
@@ -33,11 +29,8 @@ public class FileWriter
             return null;
         }
     }
-    
-    /** Copy the specified file to the specified location
-     * @param fromPath The path of the file to copy from
-     * @param toPath The path of the file to copy to */
-    public static void copyFile(String fromPath, String toPath)
+
+    @Override public void copyFile(String fromPath, String toPath)
     {
         try
         {

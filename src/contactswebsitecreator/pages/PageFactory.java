@@ -1,6 +1,8 @@
 package contactswebsitecreator.pages;
 
 import contactswebsitecreator.Contact;
+import filesystem.FileWriter;
+import filesystem.IFileWriter;
 import java.util.ArrayList;
 
 /**
@@ -12,12 +14,14 @@ import java.util.ArrayList;
 public class PageFactory
 {
     private final String path;
+    private final IFileWriter fileWriter;
     
     /** Constructor
      * @param path The path to the contacts folder */
     public PageFactory(String path)
     {
         this.path = path;
+        fileWriter = new FileWriter();
     }
     
     /** Creates and returns a style page
@@ -25,7 +29,7 @@ public class PageFactory
      * @return A style page as a Page */
     public Page getStylePage(String sourceFullPath)
     {
-        return (Page)new ClonedPage(path + "/style.css", sourceFullPath);
+        return (Page)new ClonedPage(path + "/style.css", sourceFullPath, fileWriter);
     }
     
     /** Creates and returns a script page
@@ -33,7 +37,7 @@ public class PageFactory
      * @return A script page as a Page */
     public Page getScriptPage(String sourceFullPath)
     {
-        return (Page)new ClonedPage(path + "/script.js", sourceFullPath);
+        return (Page)new ClonedPage(path + "/script.js", sourceFullPath, fileWriter);
     }
     
     /** Creates and returns an index page
@@ -41,7 +45,7 @@ public class PageFactory
      * @return An IndexPage as a Page */
     public HtmlPage getIndexPage(ArrayList<Contact> contacts)
     {
-        return (HtmlPage)new IndexPage(path, contacts);
+        return (HtmlPage)new IndexPage(path, contacts, fileWriter);
     }
     
     /** Creates and returns a contact page
@@ -49,6 +53,6 @@ public class PageFactory
      * @return A ContactPage as a Page */
     public HtmlPage getContactPage(Contact contact)
     {
-        return (HtmlPage)new ContactPage(path, contact);
+        return (HtmlPage)new ContactPage(path, contact, fileWriter);
     }
 }
