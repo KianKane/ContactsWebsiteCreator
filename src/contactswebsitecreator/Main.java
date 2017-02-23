@@ -20,7 +20,11 @@ public class Main
         String pass = "password";
         
         ContactsWebsiteCreator cwc = new ContactsWebsiteCreator(path, host, user, pass);
-        
+        userControlledMenuLoop(cwc);
+    }
+    
+    public static void userControlledMenuLoop(ContactsWebsiteCreator cwc)
+    {
         Scanner input = new Scanner(System.in);
         boolean done = false;
         do
