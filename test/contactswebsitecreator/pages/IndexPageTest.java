@@ -33,6 +33,7 @@ public class IndexPageTest
     @After public void tearDown()
     {
         indexPage = null;
+        fileWriterMock = null;
     }
 
     /** Test of getRaw method, of class IndexPage. */
