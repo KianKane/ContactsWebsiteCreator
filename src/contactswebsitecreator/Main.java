@@ -24,6 +24,8 @@ public class Main
         ContactsWebsiteCreatorAcceptanceTests.runAllTests(cwc);
     }
     
+    /** Allows the user to control the application through the console
+     * @param cwc The instance of ContactsWebsiteCreator to use */
     public static void userControlledMenuLoop(ContactsWebsiteCreator cwc)
     {
         Scanner input = new Scanner(System.in);

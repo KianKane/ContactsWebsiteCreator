@@ -21,6 +21,8 @@ public class ContactsWebsiteCreatorAcceptanceTests
         testGenerate(cwc);
     }
     
+    /** Sets the user content on all pages
+     * @param cwc ContactsWebsiteCreator instance to use */
     public static void testSetUserContent(ContactsWebsiteCreator cwc)
     {
         System.out.println("Test Set User Content");
@@ -31,6 +33,8 @@ public class ContactsWebsiteCreatorAcceptanceTests
         }
     }
     
+    /** Displays the raw information for all pages
+     * @param cwc ContactsWebsiteCreator instance to use */
     public static void testDisplayRaw(ContactsWebsiteCreator cwc)
     {
         System.out.println("Test Display Raw");
@@ -41,6 +45,8 @@ public class ContactsWebsiteCreatorAcceptanceTests
         }
     }
     
+    /** Displays the HTML for all pages
+     * @param cwc ContactsWebsiteCreator instance to use */
     public static void testDisplayHtml(ContactsWebsiteCreator cwc)
     {
         System.out.println("Test Display HTML");
@@ -51,6 +57,8 @@ public class ContactsWebsiteCreatorAcceptanceTests
         }
     }
 
+    /** Generates files
+     * @param cwc ContactsWebsiteCreator instance to use */
     public static void testGenerate(ContactsWebsiteCreator cwc)
     {
         System.out.println("Test Generate");
