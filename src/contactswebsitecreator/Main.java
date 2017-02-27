@@ -15,13 +15,19 @@ public class Main
      * @param args the command line arguments */
     public static void main(String[] args)
     {
+        boolean testing = true;
+        
         String path = System.getProperty("user.home") + "/desktop/contacts";
         String host = "jdbc:oracle:thin:@//10.1.9.106:1521/sw2";
         String user = "kian";
         String pass = "password";
         
         ContactsWebsiteCreator cwc = new ContactsWebsiteCreator(path, host, user, pass);
-        ContactsWebsiteCreatorAcceptanceTests.runAllTests(cwc);
+        
+        if (testing)
+            ContactsWebsiteCreatorAcceptanceTests.runAllTests(cwc);
+        else
+            userControlledMenuLoop(cwc);
     }
     
     /** Allows the user to control the application through the console
