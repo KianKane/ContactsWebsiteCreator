@@ -27,7 +27,7 @@ public class ContactsWebsiteCreatorAcceptanceTests
     {
         System.out.println("Test Set User Content");
         cwc.setIndexUserContent("Index user content");
-        for(Integer i : cwc.GetAllContactIDs())
+        for(Integer i : cwc.getAllContactIDs())
         {
             cwc.setContactUserContent("Contact " + i + " user content", i);
         }
@@ -39,7 +39,7 @@ public class ContactsWebsiteCreatorAcceptanceTests
     {
         System.out.println("Test Display Raw");
         cwc.displayIndexRaw();
-        for(Integer i : cwc.GetAllContactIDs())
+        for(Integer i : cwc.getAllContactIDs())
         {
             cwc.displayContactRaw(i);
         }
@@ -51,7 +51,7 @@ public class ContactsWebsiteCreatorAcceptanceTests
     {
         System.out.println("Test Display HTML");
         cwc.displayIndexHtml();
-        for(Integer i : cwc.GetAllContactIDs())
+        for(Integer i : cwc.getAllContactIDs())
         {
             cwc.displayContactHtml(i);
         }

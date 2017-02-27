@@ -121,7 +121,7 @@ public class ContactsWebsiteCreator
     
     /** Returns a list of all of the contact IDs
      * @return A list of all of the contact IDs */
-    public ArrayList<Integer> GetAllContactIDs()
+    public ArrayList<Integer> getAllContactIDs()
     {
         return new ArrayList<Integer>(contactsHashMap.keySet());
     }
