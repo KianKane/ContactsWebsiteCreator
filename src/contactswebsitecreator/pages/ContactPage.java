@@ -35,6 +35,7 @@ public class ContactPage extends HtmlPage
                     HTML.doctype() + 
                     HTML.html(
                             HTML.head(
+                                    HTML.meta("utf-8") +
                                     HTML.title(contact.forename + " " + contact.surname) + 
                                     HTML.stylesheet("../style.css")) + 
                             HTML.body(

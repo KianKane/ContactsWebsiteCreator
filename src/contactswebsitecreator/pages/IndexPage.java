@@ -53,6 +53,7 @@ public class IndexPage extends HtmlPage
                 HTML.doctype() + 
                 HTML.html(
                         HTML.head(
+                                HTML.meta("utf-8") +
                                 HTML.title("All Contacts") +
                                 HTML.stylesheet("style.css")) +
                         HTML.body(

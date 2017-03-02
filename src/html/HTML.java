@@ -31,6 +31,14 @@ public class HTML
         return "<head>\n" + innerHTML + "</head>\n";
     }
     
+    /** Creates and returns a meta tag with the specified charset
+     * @param charset The charset to be used for the page
+     * @return A meta tag with the specified charset */
+    public static String meta(String charset)
+    {
+        return "<meta charset=\"" + charset + "\">\n";
+    }
+    
     /** Creates and returns title tags with the specified innerHTML
      * @param innerHTML The content between the title tags
      * @return title tags with the specified innerHTML */

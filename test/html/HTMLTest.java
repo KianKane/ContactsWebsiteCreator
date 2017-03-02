@@ -40,6 +40,16 @@ public class HTMLTest
         assertEquals(expResult, result);
     }
 
+    /** Test of meta method, of class HTML. */
+    @Test public void testMeta()
+    {
+        System.out.println("HTMLTest.testMeta();");
+        String charset = "Sample Charset";
+        String expResult = "<meta charset=\"Sample Charset\">";
+        String result = HTML.meta(charset).replace("\n", "");
+        assertEquals(expResult, result);
+    }
+    
     /** Test of title method, of class HTML. */
     @Test public void testTitle()
     {

@@ -49,6 +49,7 @@ public class ContactPageTest
                 "<!DOCTYPE html>" +
                 "<html>" +
                 "<head>" +
+                "<meta charset=\"utf-8\">" +
                 "<title>John Smith</title>" +
                 "<link rel=\"stylesheet\" type=\"text/css\" href=\"../style.css\">" +
                 "</head>" +
@@ -74,6 +75,7 @@ public class ContactPageTest
                 "<!DOCTYPE html>" +
                 "<html>" +
                 "<head>" +
+                "<meta charset=\"utf-8\">" +
                 "<title>John Smith</title>" +
                 "<link rel=\"stylesheet\" type=\"text/css\" href=\"../style.css\">" +
                 "</head>" +
