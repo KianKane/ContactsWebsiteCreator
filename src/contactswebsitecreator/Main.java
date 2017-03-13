@@ -98,10 +98,17 @@ public class Main
                     }
                     else
                     {
-                        System.out.print("Enter content for contact " + id + ": ");
-                        String content = input.nextLine();
-                        cwc.setContactUserContent(content, id);
-                        System.out.println("Content added\n");
+                        if (cwc.contactExists(id))
+                        {
+                            System.out.print("Enter content for contact " + id + ": ");
+                            String content = input.nextLine();
+                            cwc.setContactUserContent(content, id);
+                            System.out.println("Content added\n");
+                        }
+                        else
+                        {
+                            System.out.println("No contact with that id exists\n");
+                        }
                     }
                     break;
                     

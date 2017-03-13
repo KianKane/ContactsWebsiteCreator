@@ -119,6 +119,14 @@ public class ContactsWebsiteCreator
         FolderUtilities.openFolder(path);
     }
     
+    /** Returns true if the given contact ID exists
+     * @param id The ID of the contact you want to check for
+     * @return True if the given contact ID exists */
+    public boolean contactExists(int id)
+    {
+        return contactsHashMap.containsKey(id);
+    }
+    
     /** Returns a list of all of the contact IDs
      * @return A list of all of the contact IDs */
     public ArrayList<Integer> getAllContactIDs()
