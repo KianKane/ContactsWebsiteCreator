@@ -11,13 +11,14 @@ import static org.junit.Assert.*;
  * Unit tests for the ContactPage class
  * 
  * @author Kian Kane
- * @version 23/02/2017
+ * @version 16/03/2017
  */
 public class ContactPageTest
 {
     ContactPage contactPage;
     FileWriterMock fileWriterMock;
     
+    /** Executes before every test. */
     @Before public void setUp()
     {
         String path = "C:/Sample/Path";
@@ -26,6 +27,7 @@ public class ContactPageTest
         contactPage = new ContactPage(path, contact, fileWriterMock);
     }
     
+    /** Executes after every test. */
     @After public void tearDown()
     {
         contactPage = null;

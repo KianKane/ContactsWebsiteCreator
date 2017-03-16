@@ -10,13 +10,14 @@ import static org.junit.Assert.*;
  * Unit tests for the ClonedPage class
  * 
  * @author Kian Kane
- * @version 23/02/2017
+ * @version 16/03/2017
  */
 public class ClonedPageTest
 {
     ClonedPage clonedPage;
     FileWriterMock fileWriterMock;
     
+    /** Executes before every test. */
     @Before public void setUp()
     {
         String fromPath = "C:/Sample/Path/From";
@@ -25,6 +26,7 @@ public class ClonedPageTest
         clonedPage = new ClonedPage(toPath, fromPath, fileWriterMock);
     }
     
+    /** Executes after every test. */
     @After public void tearDown()
     {
         clonedPage = null;
