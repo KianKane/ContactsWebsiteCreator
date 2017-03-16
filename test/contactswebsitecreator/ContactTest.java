@@ -6,7 +6,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Unit tests for the Contact class
+ * Unit tests for the Contact class.
+ * <br><br>
+ * These tests ensure that the constructor sets up the correct values.
  * 
  * @author Kian Kane
  * @version 16/02/2017

@@ -8,6 +8,9 @@ import static org.junit.Assert.*;
 
 /**
  * Unit tests for the ClonedPage class
+ * <br><br>
+ * These tests ensure that ClonedPage makes the correct calls and passes the
+ * correct parameters to a given IFileWriter (in this case a mock FileWriter).
  * 
  * @author Kian Kane
  * @version 16/03/2017

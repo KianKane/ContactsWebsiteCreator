@@ -9,7 +9,14 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Unit tests for the IndexPage class
+ * Unit tests for the IndexPage class.
+ * <br><br>
+ * These tests ensure the generation of HTML and raw data from the IndexPage class.
+ * A mock FileWriter is used in this test to prevent real files being created or
+ * overridden when this test runs.
+ * <br><br>
+ * Newlines are ignored in string comparisons here for ease of test case writing.
+ * 
  * 
  * @author Kian Kane
  * @version 16/03/2017

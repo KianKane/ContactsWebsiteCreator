@@ -3,14 +3,17 @@ package contactswebsitecreator.acceptancetesting;
 import contactswebsitecreator.ContactsWebsiteCreator;
 
 /**
- * AcceptanceTesting covering all of the use cases
+ * This acceptance test covers all the original use case requirements.
+ * <br><br>
+ * Note that these tests do not go through the console interface and instead
+ * go directly through a given instance of ContactsWebsiteCreator.
  * 
  * @author Kian Kane
  * @version 21/02/2017
  */
 public class ContactsWebsiteCreatorAcceptanceTests
 {
-    /** Run all tests
+    /** Run all tests acceptance tests on this class
      * @param cwc ContactsWebsiteCreator instance to use */
     public static void runAllTests(ContactsWebsiteCreator cwc)
     {
@@ -21,7 +24,15 @@ public class ContactsWebsiteCreatorAcceptanceTests
         testGenerate(cwc);
     }
     
-    /** Sets the user content on all pages
+    /** Ensures that the program can allow descriptive information to be added 
+     * to the index page and to individual contact pages as specified by the
+     * requirements of the project.
+     * <br><br>
+     * This test adds the following descriptive text to the index page:
+     * "Index user content".<br>
+     * And the following descriptive text to each contact page:
+     * "Contact {id} user content".<br>
+     * 
      * @param cwc ContactsWebsiteCreator instance to use */
     public static void testSetUserContent(ContactsWebsiteCreator cwc)
     {
@@ -33,7 +44,13 @@ public class ContactsWebsiteCreatorAcceptanceTests
         }
     }
     
-    /** Displays the raw information for all pages
+    /** Ensures that the program can display the raw contact data both for all 
+     * contacts and for specific individual contacts in the console window as 
+     * specified by the requirements of the project.
+     * <br><br>
+     * This test displays the index page raw data (which should be a list of all contact data) 
+     * and then loops through all existing contact pages and displays the raw data for each of them.
+     * 
      * @param cwc ContactsWebsiteCreator instance to use */
     public static void testDisplayRaw(ContactsWebsiteCreator cwc)
     {
@@ -45,7 +62,12 @@ public class ContactsWebsiteCreatorAcceptanceTests
         }
     }
     
-    /** Displays the HTML for all pages
+    /** Ensures that the program can display the HTML content of contact pages
+     * in the console window as specified by the requirements of the project.
+     * <br><br>
+     * This test displays the index page HTML and then loops through all  
+     * existing contact pages and displays the HTML for each of them.
+     * 
      * @param cwc ContactsWebsiteCreator instance to use */
     public static void testDisplayHtml(ContactsWebsiteCreator cwc)
     {
@@ -57,7 +79,11 @@ public class ContactsWebsiteCreatorAcceptanceTests
         }
     }
 
-    /** Generates files
+    /** Ensures that the program can generate the required pages as specified
+     * by the requirements of the project.
+     * <br><br>
+     * This test should generate the required files and open them in windows explorer.
+     * 
      * @param cwc ContactsWebsiteCreator instance to use */
     public static void testGenerate(ContactsWebsiteCreator cwc)
     {

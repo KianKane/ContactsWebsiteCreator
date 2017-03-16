@@ -4,7 +4,13 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Unit tests for the HTML class
+ * Unit tests for the HTML class.
+ * <br><br>
+ * These tests teach each individual tag generator with some sample data passed in.
+ * If these tests fail then ClonedPageTest, ContactPageTest and IndexPageTest
+ * will most likely fail as well as they rely on the HTML class.
+ * <br><br>
+ * Newlines are ignored in string comparisons here for ease of test case writing.
  * 
  * @author Kian Kane
  * @version 16/02/2017
