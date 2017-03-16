@@ -5,6 +5,5 @@
 	<target name="-post-compile">
 		<copy file="script.js" todir="${dist.dir}"/>
 		<copy file="style.css" todir="${dist.dir}"/>		
-		<copy file="TestPlan.docx" todir="${dist.dir}"/>	
 	</target>
 </project>
